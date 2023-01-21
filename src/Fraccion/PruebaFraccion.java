@@ -79,6 +79,18 @@ public class PruebaFraccion {
 			Fraccion dividir = fr1.dividir(fr3);
 			System.out.println("\tDividir Fracciones " + fr1 + " por " + fr3 + " = " + dividir.simplificar());
 			break;
+		case 7:
+			System.out.println("Introduzca la segunda Fraccion en formato numerador/denominador");
+			cadena = in1.next();
+			System.out.println("OPCION 7:");
+			Fraccion fr4 = leeFraccion(cadena);
+			fr1.simplificar();
+			fr4.simplificar();
+			if(fr1.fraccionEquivalente(fr4)) {
+				System.out.println("\tLas fracciones " + fr1 + " y "  + fr4 + " SON EQUIVALENTES");
+			}else {
+				System.out.println("\tLas fracciones " + fr1 + " y "  + fr4 + " NO SON EQUIVALENTES");
+			}
 		}
 		}
 		

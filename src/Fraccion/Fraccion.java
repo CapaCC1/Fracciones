@@ -47,6 +47,11 @@ public class Fraccion {
     public int getDenominador() {
         return denominador;
     }
+    public boolean fraccionEquivalente(Fraccion otraFraccion) {
+    	
+    	return (double)numerador/denominador == (double)otraFraccion.getNumerador()/otraFraccion.getDenominador();
+    }
+    
 	@Override
 	
 	public String toString() {
