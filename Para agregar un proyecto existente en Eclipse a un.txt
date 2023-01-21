@@ -1,0 +1,28 @@
+Para agregar un proyecto existente en Eclipse a un repositorio de GitHub, sigue estos pasos:
+
+Abre Eclipse y selecciona el proyecto que deseas agregar a GitHub.
+Haz clic derecho en el proyecto y selecciona "Team" -> "Share Project"
+Selecciona "Git" y haz clic en "Next"
+Haz clic en "Create" para crear un nuevo repositorio local
+Haz clic en "Finish" para finalizar el proceso de compartir el proyecto.
+Ahora, el proyecto está en un repositorio Git local. Puedes subirlo a GitHub mediante los siguientes pasos:
+
+Abre la línea de comandos y dirígete al directorio donde se encuentra tu proyecto
+Ejecuta el comando "git init" para inicializar un nuevo repositorio Git
+Ejecuta el comando "git add ." para agregar todos los archivos del proyecto al repositorio
+Ejecuta el comando "git commit -m "Initial commit"" para hacer un commit inicial del proyecto
+Ejecuta el comando "git remote add origin https://github.com/TU_USUARIO/TU_REPOSITORIO.git" para vincular tu repositorio local con el repositorio de GitHub
+Ejecuta el comando "git push -u origin master" para subir el proyecto a GitHub
+Nota: TU_USUARIO y TU_REPOSITORIO deben ser reemplazados con tu nombre de usuario de GitHub y el nombre del repositorio respectivamente
+
+
+
+PARA SUBIR UN PROYECTO
+
+Ejecuta el comando "git add ." para agregar todos los archivos del proyecto al repositorio
+Ejecuta el comando "git commit -m "Initial commit"" para hacer un commit inicial del proyecto
+Ejecuta el comando "git push" para subir el proyecto a GitHub
+
+PARA DESCARGAR LA VERSION DEL REPOSITORIO DE GIT
+
+git pull origin master
