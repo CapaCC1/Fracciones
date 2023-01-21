@@ -14,7 +14,7 @@ public class PruebaFraccion {
 		Scanner in1 = new Scanner(System.in);
 		
 		boolean salir = false;
-		System.out.println("*** PROGRAMA PARA OPERAR CON Fracciones -***");
+		System.out.println("***- PROGRAMA PARA OPERAR CON Fracciones -***");
 		
 		while (!salir) {
 		
