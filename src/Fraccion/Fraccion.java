@@ -51,6 +51,13 @@ public class Fraccion {
     	
     	return (double)numerador/denominador == (double)otraFraccion.getNumerador()/otraFraccion.getDenominador();
     }
+    private int mcm(int a, int b) {
+    	return a * b / mcd(a, b);
+    }
+    public Fraccion suma (Fraccion otraFraccion) {
+    	int mcm = mcm(denominador, otraFraccion.getDenominador());	
+    	return new Fraccion(numerador * (mcm/denominador) + otraFraccion.getNumerador() * (mcm/otraFraccion.getDenominador()), mcm);
+    }
     
 	@Override
 	

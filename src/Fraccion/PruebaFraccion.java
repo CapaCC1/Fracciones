@@ -39,7 +39,7 @@ public class PruebaFraccion {
 		switch (seleccion) {
 		case 1: 
 			System.out.println("OPCION 1:");
-			System.out.print("\tInvertir Fraccion: ");
+			System.out.print("\tINVERTIR Fraccion: ");
 			Fraccion invertida = fr1.invierte();
 			System.out.println(invertida);
 			break;
@@ -48,7 +48,7 @@ public class PruebaFraccion {
 			System.out.println("Introduzca el numero por el que MULTIPLICAR: ");	
 			int numero = in1.nextInt();
 			Fraccion multiplica = fr1.multiplica(numero);
-			System.out.print("\tMultiplica Fraccion " + fr1 + " por " + numero + " = " + multiplica.simplificar());
+			System.out.print("\tMULTIPLICA Fraccion " + fr1 + " por " + numero + " = " + multiplica.simplificar());
 			break;
 		case 3:
 			System.out.println("OPCION 3: ");
@@ -57,19 +57,19 @@ public class PruebaFraccion {
 			Fraccion fr2 = leeFraccion(cadena);
 			Fraccion multiplicar = fr1.multiplicar(fr2);
 			System.out.println("OPCION 4: ");
-			System.out.println("\tMultiplicar Fracciones " + fr1 + " por " + fr2 + " = " + multiplicar.simplificar());
+			System.out.println("\tMULTIPLICAR Fracciones " + fr1 + " por " + fr2 + " = " + multiplicar.simplificar());
 			break;
 		case 4:
 			System.out.println("OPCION 4:");
 			Fraccion simplificada = fr1.simplificar();
-			System.out.println("\tFraccion " + fr1 + " simplificada: " + simplificada);
+			System.out.println("\tFraccion " + fr1 + " SIMPLIFICADA: " + simplificada);
 			break;
 		case 5:
 			System.out.println("OPCION 5:");
 			System.out.println("Introduzca el numero por el que DIVIDIR: ");	
 			numero = in1.nextInt();
 			Fraccion divide = fr1.divide(numero);
-			System.out.print("\tDividir Fraccion: " + fr1 + " entre " + numero + " = " + divide);
+			System.out.print("\tDIVIDIR Fraccion: " + fr1 + " entre " + numero + " = " + divide);
 			break;
 		case 6:
 			System.out.println("Introduzca la segunda Fraccion en formato numerador/denominador");
@@ -77,7 +77,7 @@ public class PruebaFraccion {
 			System.out.println("OPCION 6:");
 			Fraccion fr3 = leeFraccion(cadena);
 			Fraccion dividir = fr1.dividir(fr3);
-			System.out.println("\tDividir Fracciones " + fr1 + " por " + fr3 + " = " + dividir.simplificar());
+			System.out.println("\tDIVIDIR Fracciones " + fr1 + " por " + fr3 + " = " + dividir.simplificar());
 			break;
 		case 7:
 			System.out.println("Introduzca la segunda Fraccion en formato numerador/denominador");
@@ -91,6 +91,12 @@ public class PruebaFraccion {
 			}else {
 				System.out.println("\tLas fracciones " + fr1 + " y "  + fr4 + " NO SON EQUIVALENTES");
 			}
+		case 8:
+			System.out.println("Introduzca la segunda Fraccion en formato numerador/denominador");
+			cadena = in1.next();
+			System.out.println("OPCION 8:");
+			Fraccion fr5 = leeFraccion(cadena);
+			System.out.println("\tLa SUMA de la Fraccion " + fr1 + " y la Fraccion " + fr5 + " = " + fr1.suma(fr5));
 		}
 		}
 		
