@@ -11,12 +11,10 @@ public class Bicicleta {
 		this.marchas = marchas;
 		this.numeroDePlatos = numeroDePlatos;
 		this.numeroDePiniones = numeroDePiniones;
-		this.numeroDePiniones = numeroDePiniones;
-	    this.platoActual = 1;
-	    this.pinionActual = 1;
-	    this.velocidadActual = 0;
+		this.platoActual = 1;
+        this.pinionActual = 1;
+        this.velocidadActual = 0;
 	}
-	
 	
 	
 	 public String subirMarchaPlato() {
@@ -90,6 +88,10 @@ public class Bicicleta {
 	    	}
 	    	return resultado;
 	    }
+	    
+	    public String toString() {
+	    	  return "Numero de Platos " + numeroDePlatos + "\n" + "Numero de Piniones: " + numeroDePiniones + "\n" + "Plato actual: " + platoActual + "\n" +"Pinion actual: " + pinionActual + "\n" + "Velocidad actual: " + velocidadActual + "KMH";
+	    	}
 	    
 	
 }

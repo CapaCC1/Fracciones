@@ -58,7 +58,16 @@ public class Fraccion {
     	int mcm = mcm(denominador, otraFraccion.getDenominador());	
     	return new Fraccion(numerador * (mcm/denominador) + otraFraccion.getNumerador() * (mcm/otraFraccion.getDenominador()), mcm);
     }
+    public Fraccion resta (Fraccion otraFraccion) {
+    	int mcm = mcm(denominador, otraFraccion.getDenominador());	
+    	return new Fraccion((mcm/denominador) * numerador - (mcm/otraFraccion.getDenominador()) * otraFraccion.getNumerador(), mcm);
+    }
     
+    public boolean equals(Fraccion otraFraccion) {
+    	Fraccion fraccion1 = (Fraccion)otraFraccion;
+    	
+    	return (fraccion1.getDenominador() == this.denominador && fraccion1.getNumerador() == this.numerador);
+    }
 	@Override
 	
 	public String toString() {

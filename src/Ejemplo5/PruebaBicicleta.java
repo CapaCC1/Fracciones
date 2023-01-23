@@ -4,14 +4,15 @@ import java.util.Scanner;
 public class PruebaBicicleta {
 
 	public static void main(String[] args) {
+		System.out.println("--SIMULADOR BICICLETA--");
+		System.out.println();
 		Scanner in1 = new Scanner (System.in);
 		
-		Bicicleta bici1 = new Bicicleta("MOUSTACHE SAMEDI 29", "Verde", 7, 5, 5);
+		Bicicleta bici1 = new Bicicleta("MOUSTACHE SAMEDI 29", "Verde", 7, 6, 7);
 		
 		boolean descansar = false;
 		boolean descanso = false;
-		
-			
+	
 		try {
 		while (!descansar) {
 		
@@ -40,46 +41,50 @@ public class PruebaBicicleta {
 			int seleccion1 = in1.nextInt();
 		
 			
+			
+			
+			
+			
+			
 			switch(seleccion1) {
 			case 1:
 				System.err.println(bici1.subirVelocidad());
-				System.out.println("VELOCIDAD ACTUAL: " + bici1.getVelocidadActual() + "KMH");
+				System.err.println(bici1);
 				break;
 			case 2:
-				System.out.println(bici1.bajarVelocidad());
-				System.out.println("VELOCIDAD ACTUAL: " + bici1.getVelocidadActual() + "KMH");
+				System.err.println(bici1.bajarVelocidad());
+				System.err.println(bici1);
 				break;
 			case 3: 
 				System.err.println(bici1.subirMarchaPlato());
-				System.out.println("MARCHA ACTUAL PLATO: " + bici1.getMarchaActualPlato());
+				System.err.println(bici1);
 				break;
 			case 4:
 				System.err.println(bici1.bajarMarchaPlato());
-				System.out.println("MARCHA ACTUAL PLATO: " + bici1.getMarchaActualPlato());
+				System.err.println(bici1);
 				break;
 			case 5:
 				System.err.println(bici1.subirMarchaPinion());
-				System.out.println("MARCHA ACTUAL PINION: " + bici1.getMarchaActualPinion());
+				System.err.println(bici1);
 				break;
 			case 6:
 				System.err.println(bici1.bajarMarchaPinion());
-				System.out.println("MARCHA ACTUAL PINION: " + bici1.getMarchaActualPinion());
+				System.err.println(bici1);
 				break;
 			case 7:
 				descanso = true;
-				System.out.println("Volviendo a Casa...");
+				System.err.println("Volviendo a Casa...");
 				break;
+				
+			default: 
+				System.err.println("OPCION NO VALIDA!!");
+				break;	
 			}
-		
-		
 		}
-		}
-		}	
+	}
+}	
 	}catch (InputMismatchException e){
-		System.out.println("POSICION INCORRECTA");
+		System.err.println("POSICION INCORRECTA");
 	}	
 }
 }
-
-
-
