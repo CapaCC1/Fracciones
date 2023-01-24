@@ -5,18 +5,14 @@ public class PruebaFraccion {
 	public static Fraccion leeFraccion(String cadena) {
 	    String[] partes = cadena.split("/");
 	    int numerador = Integer.parseInt(partes[0]);
-	    int denominador = Integer.parseInt(partes[1]);
-	    
+	    int denominador = Integer.parseInt(partes[1]);    
 	    return new Fraccion(numerador, denominador);
 	}
-	
 	public static void main(String[] args) {
 		
 		Scanner in1 = new Scanner(System.in);
-		
 		boolean salir = false;
-		System.out.println("***-- PROGRAMA PARA OPERAR CON Fracciones --***");
-			
+		System.out.println("***-- PROGRAMA PARA OPERAR CON Fracciones --***");	
 		while (!salir) {
 		try {
 		
@@ -33,8 +29,7 @@ public class PruebaFraccion {
 		System.out.println("10-Prueba Equals");
 		System.out.println("11-Salir del programa");
 		int seleccion = in1.nextInt();
-			
-		
+				
 		System.out.println();
 		switch (seleccion) {
 		case 1: 
@@ -182,5 +177,6 @@ public class PruebaFraccion {
 			in1.next();
 		}
 		}
+		in1.close();
 	}
 }
