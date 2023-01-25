@@ -4,6 +4,11 @@ public class Fraccion {
 	
 	private int numerador, denominador;
 	
+	Fraccion(){
+		this.numerador = 1;
+		this.denominador = 1;
+	}
+	
 	Fraccion (int numerador, int denominador){
 		this.numerador = numerador;
 		this.denominador = denominador;
@@ -68,6 +73,7 @@ public class Fraccion {
     	
     	return (fraccion1.getDenominador() == this.denominador && fraccion1.getNumerador() == this.numerador);
     }
+    
 	@Override
 	
 	public String toString() {

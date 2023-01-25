@@ -2,6 +2,7 @@ package Fraccion;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 public class PruebaFraccion {
+	
 	public static Fraccion leeFraccion(String cadena) {
 	    String[] partes = cadena.split("/");
 	    int numerador = Integer.parseInt(partes[0]);
@@ -14,8 +15,7 @@ public class PruebaFraccion {
 		boolean salir = false;
 		System.out.println("***-- PROGRAMA PARA OPERAR CON Fracciones --***");	
 		while (!salir) {
-		try {
-		
+		try {	
 		System.out.println();
 		System.out.println("1-Invierte Fraccion");
 		System.out.println("2-Multiplica Numero por Fraccion");

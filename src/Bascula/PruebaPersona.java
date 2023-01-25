@@ -57,28 +57,26 @@ public class PruebaPersona {
 			int opcion = in1.nextInt();
 			switch(opcion) {
 			case 1:
-				System.out.println("PERSONA 1");
-				System.out.println("\tObtencion de Atributos por Teclado");
-				System.out.println();
-				System.out.println("Introduzca el NOMBRE de la primera PERSONA");
-				String nombre1 = in1.next();
-				System.out.println("Introduzca la EDAD de la primera PERSONA");
-				int edad1 = in1.nextInt();
-				System.out.println("Introduca el SEXO de la primera PERSONA");
-				String sexo1 = in1.next();
-				System.out.println("Introduzca el PESO de la primera PERSONA");
-				double peso1 = in1.nextDouble();
-				System.out.println("Introduzca la ALTURA de la primera PERSONA");
-				double altura1 = in1.nextDouble();
-				Persona persona1 = new Persona(nombre1, "123456789X", edad1, sexo1, peso1, altura1);	
-				double imc = persona1.determina_IMC();
-				System.out.println(comprobarIMC(imc, nombre1));
+
+					System.out.println("PERSONA 1");
+					System.out.println("\tObtencion de Atributos por Teclado");
+					System.out.println();
+					System.out.println("Introduzca el NOMBRE de la primera PERSONA");
+					String nombre1 = in1.next();
+					System.out.println("Introduzca la EDAD de la primera PERSONA");
+					int edad1 = in1.nextInt();
+					System.out.println("Introduca el SEXO de la primera PERSONA");
+					String sexo1 = in1.next();
+					System.out.println("Introduzca el PESO de la primera PERSONA");
+					double peso1 = in1.nextDouble();
+					System.out.println("Introduzca la ALTURA de la primera PERSONA");
+					double altura1 = in1.nextDouble();
+					Persona persona1 = new Persona(nombre1, "123456789X", edad1, sexo1, peso1, altura1);	
+					double imc = persona1.determina_IMC();
+					System.out.println(comprobarIMC(imc, nombre1));
+					break;
+					
 				
-				if(persona1.esMayordeEdad()) {
-					System.out.println( nombre1 + " es mayor de edad");
-				}
-				
-				break;
 			case 2:
 				System.out.println("PERSONA 2");
 				System.out.println("\tAl Objeto se le pasan por parámetro el nombre, la edad y el sexo.\n "
@@ -88,6 +86,7 @@ public class PruebaPersona {
 			case 3:
 				System.out.println("PERSONA 3");
 				System.out.println("Se inicializa por parametros directamente ");
+				Persona persona3 = new Persona("Sara", "123456789X", 23, "M", 65, 1.65);
 				break;
 			}
 		}
@@ -96,5 +95,4 @@ public class PruebaPersona {
 		
 		
 	}
-
 }
