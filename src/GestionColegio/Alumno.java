@@ -17,15 +17,13 @@ public class Alumno {
         this.notaNumero = notaNumero;
         this.notaLetra = notaLetra;
     }
-    public Alumno(String nombre, String apellidos, String dni, String direccion) {
+    public Alumno(String nombre, String apellidos, String dni, String direccion, int notaNumero) {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.dni = dni;
         this.direccion = direccion;
-
     }
-    
-    
+       
     public String getNombre() {
         return nombre;
     }
@@ -75,7 +73,5 @@ public class Alumno {
     }
     public boolean equals(Alumno alumno) {
     	return (this.dni == alumno.getDni());
-    }
-    
-    
+    }   
 }
