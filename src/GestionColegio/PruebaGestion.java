@@ -125,6 +125,6 @@ public class PruebaGestion {
 			in1.next();
 		}
 	}
-		
+	in1.close();
 	}
 }
