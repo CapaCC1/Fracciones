@@ -6,12 +6,12 @@ public class Curso {
 	private String asignatura;
     private Alumno[] lista;
     private int numAlumnos;
-    private int maxAlumnos = 30;
+//    private int maxAlumnos = 30;
 
     public Curso(String asignatura) {
         this.asignatura = asignatura;
-        this.lista = new Alumno[maxAlumnos];
-        this.numAlumnos = 0;
+        this.lista = new Alumno[30];
+//        this.numAlumnos = 0;
     }
 
     public String getAsignatura() {
@@ -51,11 +51,9 @@ public class Curso {
             Alumno alumno = lista[i];
             if (alumno.getDni().equals(dni)) {
             	
-                // Reordenar el array eliminando el alumno encontrado
                 for (int j = i; j < numAlumnos - 1; j++) {
                     lista[j] = lista[j + 1];
                 }
-                // Decrementar el contador de alumnos
                 numAlumnos--;
                 return "\nALUMNO "+ alumno.getNombre() + " " + alumno.getApellidos() + " eliminado con exito";
             }
@@ -74,7 +72,7 @@ public class Curso {
     }
     
     public boolean comprobarNumeroAlumnos() {
-    	return numAlumnos < maxAlumnos;
+    	return numAlumnos <= 30;
     	}
     
     public String mostrarAlumnos() {

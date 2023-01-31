@@ -12,7 +12,7 @@ public class PruebaGestion {
 		
 		Alumno alumno1 = new Alumno("Alejando", "Rodriguez","Y8182831L","Calle San Cristobal 51 1C ",0, "No Presentado");
 		Alumno alumno4 = new Alumno("Borja", "Rodriguez","Y817782831L","Direccion 2 ",5, "Aprobado");
-		Alumno alumno2 = new Alumno("Carlos", "Dominguez","Y7423423L","Direccion 3 ",6, "Aprobado");
+		Alumno alumno2 = new Alumno("Carlos", "Torices","Y7423423L","Direccion 3 ",6, "Aprobado");
 		Alumno alumno3 = new Alumno("David", "Gonzalez","Y6425345345","Direccion 4 ",9, "Sobresaliente");
 		
 		curso1.agregarAlumno(alumno1);
