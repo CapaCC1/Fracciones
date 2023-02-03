@@ -90,7 +90,7 @@ public class pruebaAgenda {
 					System.out.println("OPCION 1");
 					System.out.println("");
 					System.out.println("Cambiar NOMBRE");
-					System.out.println("Introduzca el NOMBRE del contacto que quieras cambiar el TELEFONO");
+					System.out.println("Introduzca el NOMBRE del contacto que quieras cambiar el NOMBRE");
 					nombre = in1.next();
 					System.out.println("Introduce el nuevo NOMBRE");
 					String nombre1 = in1.next();
@@ -114,7 +114,7 @@ public class pruebaAgenda {
 					System.out.println("OPCION 3");
 					System.out.println("");
 					System.out.println("Cambiar Correo");
-					System.out.println("Introduzca el NOMBRE del contacto que quieras cambiar el TELEFONO");
+					System.out.println("Introduzca el NOMBRE del contacto que quieras cambiar el CORREO");
 					nombre = in1.next();
 					System.out.println("Introduzca el nuevo CORREO");
 					correo = in1.next();

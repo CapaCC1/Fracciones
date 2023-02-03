@@ -49,6 +49,10 @@ public class PruebaGestion {
 			String direccion = in1.nextLine();	
 			System.out.println("Introduzca la NOTA del ALUMNO");
 			int notaNumero = in1.nextInt();
+			
+			
+			
+			
 			Alumno alumno5 = new Alumno(nombre,apellido,dni,direccion,notaNumero);
 			curso1.asignarNota(notaNumero, alumno5);
 			System.out.println(curso1.agregarAlumno(alumno5));

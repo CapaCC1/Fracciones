@@ -109,12 +109,12 @@ public class Agenda {
 	        		 
 	        		 if (contacto.getNombre().equals(nombre)){
 		            	contacto.setNombre(nombre1);
+		            	return "Nombre CAMBIADO con EXITO";
 		            }else {
-		            	return "El CONTACTO buscado NO existe!";
+		            	
 		            }
-	        		 
 	        	 }
-	        return "Nombre CAMBIADO con EXITO";
+	        return "El CONTACTO buscado NO existe!";
 	        }
 	
 	public String modificarContactoTelefono(String nombre, int telefono) {
@@ -124,28 +124,30 @@ public class Agenda {
 	        	 Contacto contacto = lista[i];
 
 	        		 
-		            if (contacto.getNombre() == (nombre)){
+		            if (contacto.getNombre().equals(nombre)){
 		            	contacto.setTelefono(telefono);
+		            	return "Telefono CAMBIADO con EXITO";
 		            	
-		            }else {
-		            	return "El CONTACTO buscado NO existe!";
-		            }
+		            }else{
+		            	
+		            } 
 	        	 }
-	        return "Telefono CAMBIADO con EXITO";
+	        return "El CONTACTO buscado NO existe!";
 	        }
 	public String modificarContactoCorreo(String nombre, String correo) {
 		 int numContactos = comprobarAlumnos();
+		 
 	        for (int i = 0; i < numContactos; i++) {
 	        	
 	        	 Contacto contacto = lista[i];
 	        		 
 		            if (contacto.getNombre().equals(nombre)){
 		            	contacto.setCorreo(correo);
-		            }else {
-		            	return "El CONTACTO buscado NO existe!";
+		            	return "Correo CAMBIADO con EXITO";
+		            }else{
 		            } 	 
 	        }
-	        return "Correo CAMBIADO con EXITO";
+	        return "El CONTACTO buscado NO existe!";
 	}
 	 
 }
