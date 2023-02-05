@@ -39,13 +39,7 @@ public class PruebaBicicleta {
 			System.out.println();
 			System.out.println("Introduce la opcion deseada: ");
 			int seleccion1 = in1.nextInt();
-		
-			
-			
-			
-			
-			
-			
+
 			switch(seleccion1) {
 			case 1:
 				System.err.println(bici1.subirVelocidad());
@@ -86,5 +80,6 @@ public class PruebaBicicleta {
 	}catch (InputMismatchException e){
 		System.err.println("POSICION INCORRECTA");
 	}	
+		in1.close();
 }
 }
