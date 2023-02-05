@@ -33,7 +33,7 @@ public class Agendav2 {
 	        }else {
 	        	return "\nNumero MAXIMO de CONTACTOS alcanzado\n";
 	        }
-	        }
+		}
 
 	public String borrarContacto(String nombre) {
 	
@@ -46,7 +46,7 @@ public class Agendav2 {
 					return "CONTACTO Elimnado";
 				}else {		
 					return "";
-			}
+				}
 			}
 		}
 		return "El CONTACTO buscado NO existe!";

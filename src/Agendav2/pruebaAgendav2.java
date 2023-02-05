@@ -1,5 +1,6 @@
 package Agendav2;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import Agendav2.Agendav2;
 import Agendav2.Contactov2;
@@ -24,7 +25,7 @@ public class pruebaAgendav2 {
 		iphone1.agregarContacto(contacto5);
 		
 		while(!salir) {
-
+			try {
 			System.out.println("");
 			System.out.println("--AGENDA DE CONTACTOS--");
 			System.out.println("");
@@ -130,6 +131,11 @@ public class pruebaAgendav2 {
 					break;
 			}
 		}
+		}catch(InputMismatchException e) {
+			System.err.println("OPCION INVALIDA");
+			in1.next();
+		}
 	}
+		in1.close();
 }
 }
