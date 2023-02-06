@@ -52,18 +52,6 @@ public class Equipo {
 	}
 
 	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Equipo other = (Equipo) obj;
-		return Objects.equals(jugador1, other.jugador1) && Objects.equals(jugador2, other.jugador2);
-	}
-
-	@Override
 	public String toString() {
 		return nombreEquipo + "\nJugador 1: " + jugador1
 				+ "\nJugador 2: " + jugador2;
