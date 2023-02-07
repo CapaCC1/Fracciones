@@ -3,7 +3,7 @@ package Tenis;
 import java.util.Scanner;
 
 public class pruebaTenis {
-
+	
 	public static void main(String[] args) {
 		
 		Scanner in1 = new Scanner (System.in);
@@ -39,7 +39,9 @@ public class pruebaTenis {
 		
 		Equipo equipo2 = new Equipo(segundoEquipo, jugador1, jugador2);
 		//System.out.println(equipo2);
-		
+		Partido partido1 = new Partido();
+		partido1.aniadirEquipo(equipo1);
+		partido1.aniadirEquipo(equipo2);
 		
 		while(!salir) {
 			System.out.println("");
@@ -48,30 +50,54 @@ public class pruebaTenis {
 			System.out.println("2. Contabiliza Error No Forzado");
 			System.out.println("3. Contabiliza Saque Directo");
 			System.out.println("4. Muestra Estadisticas de Jugador");
+			System.out.println("5. Muestra Estadisticas de Equipo");
 			int seleccion = in1.nextInt();
 			switch(seleccion) {
 			case 1:
 				System.out.println("");
 				System.out.println("*CONTABILIZA PUNTO GANADOR*");
 				System.out.println("");
-				
+				System.out.println("Introduzca Nombre del JUGADOR");
+				in1.nextLine();
+				String nombre = in1.nextLine();
+				System.out.println(partido1.aniadePuntoGanador(nombre));
 				break;
 			case 2:
 				System.out.println("");
 				System.out.println("CONTABILIZA ERROR NO FORZADO");
 				System.out.println("");
-				
+				System.out.println("Introduzca Nombre del JUGADOR");
+				in1.nextLine();
+				nombre = in1.nextLine();
+				System.out.println(partido1.aniadeErroresNoForzados(nombre));
 				break;
 			case 3:
 				System.out.println("");
 				System.out.println("CONTABILIZA SAQUE DIRECTO");
 				System.out.println("");
-				
+				System.out.println("Introduzca Nombre del JUGADOR");
+				in1.nextLine();
+				nombre = in1.nextLine();
+				System.out.println(partido1.aumentarSaquesDirectos(nombre));
 				break;
 			case 4:
 				System.out.println("");
 				System.out.println("MUESTRA ESTADISTICAS DE JUGADOR");
-				
+				System.out.println("");
+				System.out.println("Introduzca el Nombre del JUGADOR: ");
+				in1.nextLine();
+				nombre = in1.nextLine();
+				System.out.println(partido1.buscaJugador(nombre));
+				break;
+			case 5:
+				System.out.println("");
+				System.out.println("MUESTRA ESTADISTICAS DE EQUIPO");
+				System.out.println("");
+				System.out.println("Introduzca el Nombre del EQUIPO");
+				in1.nextLine();
+				String equipo = in1.nextLine();
+				//System.out.println(partido1.buscaEquipo(equipo));
+				System.out.println(partido1.buscaEquipo(equipo));
 				break;
 			}
 		}

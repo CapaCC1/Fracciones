@@ -4,12 +4,12 @@ import java.util.Objects;
 
 public class Jugador {
 	private String nombreJugador;
+	
 	private int puntosGanadores;
 	private int erroresNoForzados;
 	private int saquesDirectos;
 	
 	public Jugador(String nombreJugador) {
-		super();
 		this.nombreJugador = nombreJugador;
 		this.puntosGanadores = 0;
 		this.erroresNoForzados = 0;
@@ -47,7 +47,20 @@ public class Jugador {
 	public void setSaquesDirectos(int saquesDirectos) {
 		this.saquesDirectos = saquesDirectos;
 	}
-
+	
+	public void aumentarPuntosGanados() {
+		puntosGanadores++;
+	}
+	
+	public void aumentaErroresNoForzados() {
+		erroresNoForzados++;
+	}
+	
+	public void aumentarSaquesDirectos() {
+		saquesDirectos++;
+	}
+	
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -62,7 +75,9 @@ public class Jugador {
 
 	@Override
 	public String toString() {
-		return  nombreJugador.toString();
+		return  nombreJugador + "\nPuntos GANADORES: " + puntosGanadores 
+				+ "\nErrores No Forzados: " + erroresNoForzados
+				+ "\nSaques Directos: " + saquesDirectos;
 	}
 	
 }
