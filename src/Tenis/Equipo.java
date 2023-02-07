@@ -12,7 +12,6 @@ public class Equipo {
 	public Equipo(String nombreEquipo,Jugador jugador1,Jugador jugador2) {
 		this.jugador1 = jugador1;
 		this.jugador2 = jugador2;
-		
 		this.nombreEquipo = nombreEquipo;
 		
 	}
@@ -37,10 +36,8 @@ public class Equipo {
 	
 	@Override
 	public String toString() {
-		return nombreEquipo + "\nJugador 1: " + jugador1 + "\n"
-				+ "\nJugador 2: " + jugador2 + "\n";
-				
-				
+		return nombreEquipo + "\n\tJugador 1: " + jugador1 + "\n"
+				+ "\n\tJugador 2: " + jugador2 + "\n";				
 	}
 
 	@Override
