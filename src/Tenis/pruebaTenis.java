@@ -37,9 +37,7 @@ public class pruebaTenis {
 		jugador2 = new Jugador(jugadorN2);
 		
 		Equipo equipo2 = new Equipo(segundoEquipo, jugador1, jugador2);
-		Partido partido1 = new Partido();
-		partido1.aniadirEquipo(equipo1);
-		partido1.aniadirEquipo(equipo2);
+		Partido partido1 = new Partido(equipo1, equipo2);
 		
 		while(!salir) {
 			System.out.println("");
@@ -58,16 +56,18 @@ public class pruebaTenis {
 				System.out.println("Introduzca Nombre del JUGADOR");
 				in1.nextLine();
 				String nombre = in1.nextLine();
-				System.out.println(partido1.aniadePuntoGanador(nombre));
+				Equipo equipo = partido1.buscaEquipo(nombre);
+				System.out.println(equipo.aniadePuntoGanador(nombre));
 				break;
 			case 2:
 				System.out.println("");
-				System.out.println("CONTABILIZA ERROR NO FORZADO");
+				System.out.println("CONTABILIZA ERROR NO FORZADO*");
 				System.out.println("");
 				System.out.println("Introduzca Nombre del JUGADOR");
 				in1.nextLine();
 				nombre = in1.nextLine();
-				System.out.println(partido1.aniadeErroresNoForzados(nombre));
+				equipo = partido1.buscaEquipo(nombre);
+				System.out.println(equipo.aniadeErroresNoForzados(nombre));
 				break;
 			case 3:
 				System.out.println("");
@@ -76,7 +76,8 @@ public class pruebaTenis {
 				System.out.println("Introduzca Nombre del JUGADOR");
 				in1.nextLine();
 				nombre = in1.nextLine();
-				System.out.println(partido1.aumentarSaquesDirectos(nombre));
+				equipo = partido1.buscaEquipo(nombre);
+				System.out.println(equipo.aniadeSaquesDirectos(nombre));
 				break;
 			case 4:
 				System.out.println("");
@@ -85,7 +86,8 @@ public class pruebaTenis {
 				System.out.println("Introduzca el Nombre del JUGADOR: ");
 				in1.nextLine();
 				nombre = in1.nextLine();
-				System.out.println(partido1.buscaJugador(nombre));
+				equipo = partido1.buscaEquipo(nombre);
+				System.out.println(equipo1.buscaJugador(nombre));
 				break;
 			case 5:
 				System.out.println("");
@@ -93,8 +95,8 @@ public class pruebaTenis {
 				System.out.println("");
 				System.out.println("Introduzca el Nombre del EQUIPO");
 				in1.nextLine();
-				String equipo = in1.nextLine();
-				System.out.println(partido1.buscaEquipo(equipo));
+				String equipo5 = in1.nextLine();
+				System.out.println(partido1.buscaEquipo(equipo5));
 				break;
 			}
 		}

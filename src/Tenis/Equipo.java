@@ -1,6 +1,5 @@
 package Tenis;
 
-import java.util.ArrayList;
 import java.util.Objects;
 
 public class Equipo {
@@ -23,15 +22,66 @@ public class Equipo {
 	public String getNombreEquipo() {
 		return nombreEquipo;
 	}
-	public ArrayList<Jugador> getJugadores() {
-		ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
-		jugadores.add(jugador1);
-		jugadores.add(jugador2);
-		return jugadores;
+	public Jugador getJugador1() {
+		return jugador1;
+		
+	}
+	public Jugador getJugador2() {
+		return jugador2;
 		
 	}
 	public void setNombreEquipo(String nombreEquipo) {
 		this.nombreEquipo = nombreEquipo;
+	}
+	
+	public Jugador buscaJugador(String nombre) {
+			
+			if(jugador1.equals(new Jugador(nombre))) {
+					return jugador1;
+			}if(jugador2.equals(new Jugador(nombre))) {
+				return jugador2;
+			}
+			return null;
+	}
+	 public String getEquipo(String nombre) {
+	        if (nombre.equals(jugador1.getNombreJugador())) {
+	            return jugador1.getNombreEquipo();
+	        } else if (nombre.equals(jugador2.getNombreJugador())) {
+	            return jugador2.getNombreEquipo();
+	        } else {
+	            return null;
+	        }
+	    }
+	
+	public String aniadePuntoGanador(String nombre) {
+		Jugador jugador = buscaJugador(nombre);
+		
+		if(jugador != null) {
+			jugador.aumentarPuntosGanados();
+			return "Punto Agregado!";
+		}else {
+			return "Jugador NO Encontrado";	
+		}	
+	}
+	
+	public String aniadeErroresNoForzados(String nombre) {
+		Jugador jugador = buscaJugador(nombre);
+		if(jugador != null) {
+			jugador.aumentaErroresNoForzados();
+			return "Error No Forzado Agregado!";
+		}else {
+			return "Jugador NO Encontrado";
+		}
+	}
+	
+	public String aniadeSaquesDirectos(String nombre) {
+		Jugador jugador = buscaJugador(nombre);
+		if(jugador != null) {
+			jugador.aumentarSaquesDirectos();
+			return "Saque Directo Agregado!";
+		}else {
+			return "Jugador NO Encontrado";
+		}
 	}
 	
 	@Override

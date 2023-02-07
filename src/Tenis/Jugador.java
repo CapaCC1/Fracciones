@@ -4,16 +4,30 @@ import java.util.Objects;
 
 public class Jugador {
 	private String nombreJugador;
+	private String nombreEquipo;
 	
 	private int puntosGanadores;
 	private int erroresNoForzados;
 	private int saquesDirectos;
 	
-	public Jugador(String nombreJugador) {
+	public String getNombreEquipo() {
+		return nombreEquipo;
+	}
+
+	public void setNombreEquipo(String nombreEquipo) {
+		this.nombreEquipo = nombreEquipo;
+	}
+
+	public Jugador(String nombreJugador, String nombreEquipo) {
+		this.nombreJugador = nombreJugador;
 		this.nombreJugador = nombreJugador;
 		this.puntosGanadores = 0;
 		this.erroresNoForzados = 0;
 		this.saquesDirectos = 0;
+	}
+	
+	public Jugador(String nombreJugador) {
+		
 	}
 
 	public String getNombreJugador() {
