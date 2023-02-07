@@ -9,7 +9,7 @@ public class pruebaTenis {
 		Scanner in1 = new Scanner (System.in);
 		boolean salir = false;
 		
-		System.out.println("FINAL RONALD GARROS");
+		System.out.println("*FINAL RONALD GARROS*");
 		System.out.println("");
 		System.out.println("Introduzca el NOMBRE del PRIMER EQUIPO");
 		String primerEquipo = in1.next();
@@ -23,7 +23,6 @@ public class pruebaTenis {
 		Jugador jugador2 = new Jugador(jugadorN2);
 		
 		Equipo equipo1 = new Equipo(primerEquipo, jugador1, jugador2);
-		//System.out.println(equipo1);
 		
 		System.out.println("");
 		System.out.println("Introduzca el NOMBRE del SEGUNDO EQUIPO");
@@ -38,7 +37,6 @@ public class pruebaTenis {
 		jugador2 = new Jugador(jugadorN2);
 		
 		Equipo equipo2 = new Equipo(segundoEquipo, jugador1, jugador2);
-		//System.out.println(equipo2);
 		Partido partido1 = new Partido();
 		partido1.aniadirEquipo(equipo1);
 		partido1.aniadirEquipo(equipo2);
@@ -96,7 +94,6 @@ public class pruebaTenis {
 				System.out.println("Introduzca el Nombre del EQUIPO");
 				in1.nextLine();
 				String equipo = in1.nextLine();
-				//System.out.println(partido1.buscaEquipo(equipo));
 				System.out.println(partido1.buscaEquipo(equipo));
 				break;
 			}
