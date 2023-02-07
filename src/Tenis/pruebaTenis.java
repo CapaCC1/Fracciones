@@ -101,6 +101,7 @@ public class pruebaTenis {
 				break;
 			}
 		}
+		in1.close();
 	}
 
 }

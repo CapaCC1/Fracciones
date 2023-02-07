@@ -1,6 +1,7 @@
 package Tenis;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Equipo {
 	private String nombreEquipo;
@@ -40,6 +41,18 @@ public class Equipo {
 				+ "\nJugador 2: " + jugador2 + "\n";
 				
 				
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Equipo other = (Equipo) obj;
+		return Objects.equals(nombreEquipo, other.nombreEquipo);
 	}
 	
 }
