@@ -26,19 +26,21 @@ public class Partido {
 		this.equipo2 = equipo2;
 	}
 	
-	public Equipo buscaEquipoJugador(String nombre) {
-		Jugador jugador = equipo1.buscaJugador(nombre);
-	    if (jugador != null) {
-	      return equipo1;
+	public String muestraEstadisticasJugador(String nombreJugador) {
+	    Equipo equipo = equipo1.buscaEquipoJugador(nombreJugador, equipo1);
+	    if (equipo != null) {
+	        return equipo.muestraEstadisticasJugador(nombreJugador);
+	        
+	    }   
+	     equipo = equipo2.buscaEquipoJugador(nombreJugador, equipo2);
+	    if (equipo != null) {
+	        return equipo.muestraEstadisticasJugador(nombreJugador);
+	        
 	    }
-	    jugador = equipo2.buscaJugador(nombre);
-	    if (jugador != null) {
-	      return equipo2;
-	    }
-	    return null;
-	  }
+	    return "Jugador NO Encontrado";
+	}
 	
-	private Equipo buscaEquipo(String nombre) {
+	public Equipo buscaEquipo(String nombre) {
 		
 	    if (equipo1.equals(new Equipo(nombre))) {
 	      return equipo1;
@@ -49,54 +51,49 @@ public class Partido {
 	    return null;
 	  }
 	
-	public String agregaSaqueDirecto(String nombre) {
+	public int agregaSaqueDirecto(String nombre) {
 	    Equipo equipo = null;
-	    String resultado = "";
 	    
 	    if(equipo1.buscaJugador(nombre) != null) {
 	      equipo = equipo1;
 	    }else if (equipo2.buscaJugador(nombre) != null) {
 	      equipo = equipo2;
 	    }if (equipo != null) {
-	      resultado = equipo.aniadeSaquesDirectos(nombre);
-	      return resultado;
+	      equipo.aniadeSaquesDirectos(nombre);
+	     return 0;
 	    }else {
-	      resultado = "Jugador NO encontrado en ambos equipos";
-	      return resultado;
+	      return 1;
 	    }
 	  }
 	
-	public String agregaPuntoGanador(String nombre) {
+	public int agregaPuntoGanador(String nombre) {
 	    Equipo equipo = null;
-	    String resultado = "";
 	    
 	    if(equipo1.buscaJugador(nombre) != null) {
 	      equipo = equipo1; 
 	    }else if (equipo2.buscaJugador(nombre) != null) {
 	      equipo = equipo2;
 	    }if (equipo != null) {
-	      resultado = equipo.aniadePuntoGanador(nombre);
-	      return resultado; 
+	      equipo.aniadePuntoGanador(nombre);
+	      return 1; 
 	    }else {
-	      resultado = "Jugador NO encontrado en ambos equipos";
-	      return resultado;
+	      return 0;
 	    }
 	  }
 	
-	public String agregaErrorNoForzado(String nombre) {
+	public int agregaErrorNoForzado(String nombre) {
 	    Equipo equipo = null;
-	    String resultado = "";
 	    
 	    if(equipo1.buscaJugador(nombre) != null) {
 	      equipo = equipo1; 
 	    }else if (equipo2.buscaJugador(nombre) != null) {
 	      equipo = equipo2;  
 	    }if (equipo != null) {
-	      resultado = equipo.aniadeErroresNoForzados(nombre);
-	      return resultado;
+	      equipo.aniadeErroresNoForzados(nombre);
+	      return 0;
 	    }else {	
-	      resultado = "JUGADOR No encontrado en ambos equipos";
-	      return resultado;
+	      return 1;
+
 	    }
 	  }
 	
@@ -104,8 +101,9 @@ public class Partido {
 	    Equipo equipo = buscaEquipo(nombre);
 	    if (equipo != null) {
 	      return equipo.toString();
-	    }
+	    }else {
 	    return "EQUIPO No encontrado.";
 	  }
+	}
 	}
 

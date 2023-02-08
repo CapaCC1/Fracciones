@@ -4,6 +4,20 @@ import java.util.Scanner;
 
 public class pruebaTenis {
 	
+	public static String codigoResultado(int codigo) {
+	    switch (codigo) {
+	        case 0:
+	            return "Jugador NO Encontrado";
+	        case 1:
+	            return "**Punto GANADOR Agregado!**";
+	        case 2:
+	        	return "**Error No Forzado Agregado!**";
+	        case 3:
+	        	return "**Saque Directo Agregado!**";
+	        default:
+	            return "Código desconocido";
+	    }
+	}
 	public static void main(String[] args) {
 		
 		Scanner in1 = new Scanner (System.in);
@@ -73,7 +87,8 @@ public class pruebaTenis {
 				System.out.println("Introduzca Nombre del JUGADOR");
 				in1.nextLine();
 				String nombre = in1.nextLine();
-				System.out.println(partido1.agregaPuntoGanador(nombre));
+				int resultado = partido1.agregaPuntoGanador(nombre);
+				System.out.println(codigoResultado(resultado));
 				break;
 			case 2:
 				System.out.println("");
@@ -82,7 +97,8 @@ public class pruebaTenis {
 				System.out.println("Introduzca Nombre del JUGADOR");
 				in1.nextLine();
 				nombre = in1.nextLine();
-				System.out.println(partido1.agregaErrorNoForzado(nombre));
+				resultado = partido1.agregaErrorNoForzado(nombre);
+				System.out.println(codigoResultado(resultado));
 				break;
 			case 3:
 				System.out.println("");
@@ -91,7 +107,8 @@ public class pruebaTenis {
 				System.out.println("Introduzca Nombre del JUGADOR");
 				in1.nextLine();
 				nombre = in1.nextLine();
-				System.out.println(partido1.agregaSaqueDirecto(nombre));
+				resultado = partido1.agregaErrorNoForzado(nombre);
+				System.out.println(codigoResultado(resultado));
 				break;
 			case 4:
 				System.out.println("");
@@ -100,8 +117,8 @@ public class pruebaTenis {
 				System.out.println("Introduzca el Nombre del JUGADOR: ");
 				in1.nextLine();
 				nombre = in1.nextLine();
-				Equipo equipoBusca = partido1.buscaEquipoJugador(nombre);
-				System.out.println(equipoBusca.muestraEstadisticasJugador(nombre));
+				System.out.println(partido1.muestraEstadisticasJugador(nombre));
+				
 				break;
 			case 5:
 				System.out.println("");
@@ -111,9 +128,12 @@ public class pruebaTenis {
 				in1.nextLine();
 				String equipo = in1.nextLine();
 				System.out.println(partido1.muestraEstadisticasEquipo(equipo));
+			    
 				break;
 			}
 		}
 		in1.close();
 	}
+
+	
 }

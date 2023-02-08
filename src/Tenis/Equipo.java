@@ -46,65 +46,98 @@ public class Equipo {
         return null;
 	}
 	
-	public String aniadePuntoGanador(String nombre) {
+	public int aniadePuntoGanador(String nombre) {
 		Jugador jugador = buscaJugador(nombre);
 		if(jugador != null) {
 			jugador.aumentarPuntosGanados();
-			return "**Punto GANADOR Agregado!**";
+			return 0;
 		}else {
-			return "Jugador NO Encontrado";	
+			return 1;	
 		}	
 	}
 	
-	public String aniadeErroresNoForzados(String nombre) {
+	public int aniadeErroresNoForzados(String nombre) {
 		Jugador jugador = buscaJugador(nombre);
 		if(jugador != null) {
 			jugador.aumentaErroresNoForzados();
-			return "**Error No Forzado Agregado!**";
+			return 2;
 		}else {
-			return "Jugador NO Encontrado";
+			return 1;
 		}
 		
 	}
 	
-	public String aniadeSaquesDirectos(String nombre) {
+	public int aniadeSaquesDirectos(String nombre) {
 		Jugador jugador = buscaJugador(nombre);
 		if(jugador != null) {
 			jugador.aumentarSaquesDirectos();
-			return "**Saque Directo Agregado!**";
+			return 3;
 		}else {
-			return "Jugador NO Encontrado";
+			return 1;
 		}
-		
 	}
 	
 	public String muestraEstadisticasJugador(String nombreJugador) {
-		String resultado = "";
 	    Jugador jugador = buscaJugador(nombreJugador);
+	    String resultado = "";
 	    if (jugador != null) {
-	      return jugador.toString();
-	    }else {
-	     resultado += "JUGADOR No Encontrado!";
+	      resultado += jugador.toString();
 	    }
 	    return resultado;
 	  }
 	
+	private int calculaPuntosGanadoresTotales() {
+	    int puntos = 0;
+	    if (jugador1 != null && jugador1.getPuntosGanadores() != 0) {
+	      puntos += jugador1.getPuntosGanadores();
+	    }
+	    if (jugador2 != null && jugador2.getPuntosGanadores() != 0) {
+	      puntos += jugador2.getPuntosGanadores();
+	    }
+	    return puntos;
+	  }
+	
+	private int calculaErroresNoForzadosTotales() {
+	    int puntos = 0;
+	    if (jugador1 != null && jugador1.getErroresNoForzados() != 0) {
+	      puntos += jugador1.getErroresNoForzados();
+	    }
+	    if (jugador2 != null && jugador2.getErroresNoForzados() != 0) {
+	      puntos += jugador2.getErroresNoForzados();
+	    }
+	    return puntos;
+	  }
+	
+	private int calculaSaquesDirectosTotales() {
+	    int puntos = 0;
+	    if (jugador1 != null && jugador1.getSaquesDirectos() != 0) {
+	      puntos += jugador1.getSaquesDirectos();
+	    }
+	    if (jugador2 != null && jugador2.getSaquesDirectos() != 0) {
+	      puntos += jugador2.getSaquesDirectos();
+	    }
+	    return puntos;
+	  }
+	
+	public Equipo buscaEquipoJugador(String nombre, Equipo equipo) {
+		Jugador jugador = buscaJugador(nombre);
+	    if (jugador != null) {
+	      return equipo;
+	    }
+	    jugador = buscaJugador(nombre);
+	    if (jugador != null) {
+	      return equipo;
+	    }
+	    return null;
+	  }
+	
 	public String toString() {
 		String resultado = "";
-		
-		Jugador jugador = buscaJugador(getNombreEquipo());
-		int puntosGanadores = jugador.getPuntosGanadores();
-		int erroresNoForzados = jugador.getErroresNoForzados();
-		int saquesDirectos = jugador.getSaquesDirectos();
-		int puntosGanadoresTotales = 0;
-		puntosGanadoresTotales += puntosGanadores;
-		int erroresNoForzadosTotales = 0;
-		erroresNoForzadosTotales += erroresNoForzados;
-		int saquesDirectosTotales = 0;
-		saquesDirectosTotales += saquesDirectos;
-		
-		
 		resultado += "Equipo: " + nombreEquipo;
+		int puntosGanadoresTotales = calculaPuntosGanadoresTotales();
+		int erroresNoForzadosTotales = calculaErroresNoForzadosTotales();
+		int saquesDirectosTotales = calculaSaquesDirectosTotales();
+		
 		if(puntosGanadoresTotales > 0) {
 			resultado += "\nPuntos GANADORES: " + puntosGanadoresTotales;
 		}if(erroresNoForzadosTotales > 0) {
@@ -117,9 +150,6 @@ public class Equipo {
 		return resultado;
 	}
 	
-
-	
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
