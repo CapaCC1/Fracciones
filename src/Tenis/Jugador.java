@@ -71,7 +71,7 @@ public class Jugador {
 	public String obtenEstadisticasJugador() {
 		String resultado = "";
 		
-		resultado += nombreJugador;
+		resultado += "Jugador: " + nombreJugador;
 		if(puntosGanadores > 0) {
 			resultado += "\nPuntos GANADORES: " + puntosGanadores;
 		}if(erroresNoForzados > 0) {
@@ -79,7 +79,7 @@ public class Jugador {
 		}if(saquesDirectos > 0) {
 			resultado += "\nSaques Directos: " + saquesDirectos;
 		}if(puntosGanadores == 0 && erroresNoForzados == 0 && saquesDirectos == 0) {
-			resultado += " SIN DATOS";
+			resultado += " Sin DATOS Registrados";
 		}
 		return resultado;
 	}

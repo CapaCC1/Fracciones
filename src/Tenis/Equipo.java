@@ -99,7 +99,7 @@ public class Equipo {
 	public String obtenEstadisticasEquipo() {
 		String resultado = "";
 		
-		resultado += nombreEquipo;
+		resultado += "Equipo: " + nombreEquipo;
 		if(puntosGanadoresTotales > 0) {
 			resultado += "\nPuntos GANADORES: " + puntosGanadoresTotales;
 		}if(erroresNoForzadosTotales > 0) {
@@ -107,7 +107,7 @@ public class Equipo {
 		}if(saquesDirectosTotales > 0) {
 			resultado += "\nSaques Directos: " + saquesDirectosTotales;
 		}if(puntosGanadoresTotales == 0 && erroresNoForzadosTotales == 0 && saquesDirectosTotales == 0) {
-			resultado += " SIN DATOS";
+			resultado += " Sin DATOS Registrados";
 		}
 		return resultado;
 	}
