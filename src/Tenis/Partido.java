@@ -1,6 +1,7 @@
 package Tenis;
 
 public class Partido {
+	
 	private Equipo equipo1;
 	private Equipo equipo2;
 	
@@ -37,12 +38,11 @@ public class Partido {
 	    return null;
 	  }
 	
-	public Equipo buscaEquipo(String nombre) {
+	private Equipo buscaEquipo(String nombre) {
 		
 	    if (equipo1.equals(new Equipo(nombre))) {
 	      return equipo1;
 	    }
-	    
 	    if (equipo2.equals(new Equipo(nombre))) {
 	      return equipo2;
 	    }
@@ -55,16 +55,12 @@ public class Partido {
 	    
 	    if(equipo1.buscaJugador(nombre) != null) {
 	      equipo = equipo1;
-	      
 	    }else if (equipo2.buscaJugador(nombre) != null) {
 	      equipo = equipo2;
-	      
 	    }if (equipo != null) {
 	      resultado = equipo.aniadeSaquesDirectos(nombre);
 	      return resultado;
-	      
 	    }else {
-	    	
 	      resultado = "Jugador NO encontrado en ambos equipos";
 	      return resultado;
 	    }
@@ -75,17 +71,13 @@ public class Partido {
 	    String resultado = "";
 	    
 	    if(equipo1.buscaJugador(nombre) != null) {
-	      equipo = equipo1;
-	      
+	      equipo = equipo1; 
 	    }else if (equipo2.buscaJugador(nombre) != null) {
 	      equipo = equipo2;
-	      
 	    }if (equipo != null) {
 	      resultado = equipo.aniadePuntoGanador(nombre);
-	      return resultado;
-	      
+	      return resultado; 
 	    }else {
-	    	
 	      resultado = "Jugador NO encontrado en ambos equipos";
 	      return resultado;
 	    }
@@ -96,17 +88,13 @@ public class Partido {
 	    String resultado = "";
 	    
 	    if(equipo1.buscaJugador(nombre) != null) {
-	      equipo = equipo1;
-	      
+	      equipo = equipo1; 
 	    }else if (equipo2.buscaJugador(nombre) != null) {
-	      equipo = equipo2;
-	      
+	      equipo = equipo2;  
 	    }if (equipo != null) {
 	      resultado = equipo.aniadeErroresNoForzados(nombre);
 	      return resultado;
-	      
-	    }else {
-	    	
+	    }else {	
 	      resultado = "JUGADOR No encontrado en ambos equipos";
 	      return resultado;
 	    }
@@ -115,7 +103,7 @@ public class Partido {
 	public String muestraEstadisticasEquipo(String nombre) {
 	    Equipo equipo = buscaEquipo(nombre);
 	    if (equipo != null) {
-	      return equipo.obtenEstadisticasEquipo();
+	      return equipo.toString();
 	    }
 	    return "EQUIPO No encontrado.";
 	  }

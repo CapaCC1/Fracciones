@@ -68,7 +68,7 @@ public class Jugador {
 		saquesDirectos++;
 	}
 	
-	public String obtenEstadisticasJugador() {
+	public String toString() {
 		String resultado = "";
 		
 		resultado += "Jugador: " + nombreJugador;
@@ -95,12 +95,6 @@ public class Jugador {
 		Jugador other = (Jugador) obj;
 		return Objects.equals(nombreJugador, other.nombreJugador);
 	}
-
-	@Override
-	public String toString() {
-		return  nombreJugador + "\nPuntos GANADORES: " + puntosGanadores 
-				+ "\nErrores No Forzados: " + erroresNoForzados
-				+ "\nSaques Directos: " + saquesDirectos;
-	}
+	
 	
 }

@@ -8,8 +8,8 @@ public class pruebaTenis {
 		
 		Scanner in1 = new Scanner (System.in);
 		boolean salir = false;
-		/*
 		System.out.println("*FINAL RONALD GARROS*");
+		/*
 		System.out.println("");
 		System.out.println("Introduzca el NOMBRE del PRIMER EQUIPO");
 		String primerEquipo = in1.next();
@@ -116,5 +116,4 @@ public class pruebaTenis {
 		}
 		in1.close();
 	}
-
 }
