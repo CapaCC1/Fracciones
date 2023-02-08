@@ -4,6 +4,7 @@ import java.util.Objects;
 
 public class Jugador {
 	private String nombreJugador;
+	private String nombreEquipo;
 	
 	private int puntosGanadores;
 	private int erroresNoForzados;
@@ -15,11 +16,18 @@ public class Jugador {
 		this.erroresNoForzados = 0;
 		this.saquesDirectos = 0;
 	}
-
+	
+	public void setNombreEquipo(String nombreEquipo) {
+		this.nombreEquipo = nombreEquipo;
+	}
 	public String getNombreJugador() {
 		return nombreJugador;
 	}
-
+	
+	public String getNombreEquipo() {
+		return nombreEquipo;
+	}
+	
 	public void setNombreJugador(String nombreJugador) {
 		this.nombreJugador = nombreJugador;
 	}
@@ -60,6 +68,21 @@ public class Jugador {
 		saquesDirectos++;
 	}
 	
+	public String obtenEstadisticasJugador() {
+		String resultado = "";
+		
+		resultado += nombreJugador;
+		if(puntosGanadores > 0) {
+			resultado += "\nPuntos GANADORES: " + puntosGanadores;
+		}if(erroresNoForzados > 0) {
+			resultado += "\nErrores No Forzados: " + erroresNoForzados;
+		}if(saquesDirectos > 0) {
+			resultado += "\nSaques Directos: " + saquesDirectos;
+		}if(puntosGanadores == 0 && erroresNoForzados == 0 && saquesDirectos == 0) {
+			resultado += " SIN DATOS";
+		}
+		return resultado;
+	}
 	
 	@Override
 	public boolean equals(Object obj) {
