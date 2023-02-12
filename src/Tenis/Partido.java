@@ -9,7 +9,24 @@ public class Partido {
 		this.equipo1 = equipo1;
 		this.equipo2 = equipo2;
 	}
-
+	
+	public Partido() {
+		
+	}
+	
+	public void agregarEquipo(String nombreEquipo, String nombreJugador1, String nombreJugador2) {
+		
+		Equipo equipo = new Equipo();
+		
+		equipo = new Equipo(nombreEquipo, equipo.agregarJugador(nombreJugador1),equipo.agregarJugador(nombreJugador2));
+		
+	    if (this.equipo1 == null) {
+	      this.equipo1 = equipo;
+	    } else if (this.equipo2 == null) {
+	      this.equipo2 = equipo;
+	    }
+	  }
+	
 	public Equipo getEquipo1() {
 		return equipo1;
 	}
@@ -27,12 +44,11 @@ public class Partido {
 	}
 	
 	public String muestraEstadisticasJugador(String nombreJugador) {
-	    Equipo equipo = equipo1.buscaEquipoJugador(nombreJugador, equipo1);
+	    Equipo equipo = equipo1.buscarEquipoJugador(nombreJugador, equipo1, equipo2);
 	    if (equipo != null) {
-	        return equipo.muestraEstadisticasJugador(nombreJugador);
-	        
+	        return equipo.muestraEstadisticasJugador(nombreJugador);  
 	    }   
-	     equipo = equipo2.buscaEquipoJugador(nombreJugador, equipo2);
+	     equipo = equipo2.buscarEquipoJugador(nombreJugador, equipo1, equipo2);
 	    if (equipo != null) {
 	        return equipo.muestraEstadisticasJugador(nombreJugador);
 	        
@@ -99,11 +115,10 @@ public class Partido {
 	
 	public String muestraEstadisticasEquipo(String nombre) {
 	    Equipo equipo = buscaEquipo(nombre);
-	    if (equipo != null) {
+	    if (equipo == buscaEquipo(nombre)) {
 	      return equipo.toString();
 	    }else {
 	    return "EQUIPO No encontrado.";
 	  }
 	}
 	}
-

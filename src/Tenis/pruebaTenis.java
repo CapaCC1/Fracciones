@@ -22,6 +22,7 @@ public class pruebaTenis {
 		
 		Scanner in1 = new Scanner (System.in);
 		boolean salir = false;
+		
 		System.out.println("*FINAL RONALD GARROS*");
 		/*
 		System.out.println("");
@@ -30,45 +31,33 @@ public class pruebaTenis {
 		System.out.print("Jugador 1: ");
 		in1.nextLine();
 		String jugadorN1 = in1.nextLine();
-		Jugador jugador1 = new Jugador(jugadorN1);
 		
 		System.out.print("Jugador 2: ");
 		String jugadorN2 = in1.nextLine();
-		Jugador jugador2 = new Jugador(jugadorN2);
 		
-		Equipo equipo1 = new Equipo(primerEquipo, jugador1, jugador2);
 		
 		System.out.println("");
 		System.out.println("Introduzca el NOMBRE del SEGUNDO EQUIPO");
 		String segundoEquipo = in1.next();
 		System.out.print("Jugador 1: ");
 		in1.nextLine();
-		jugadorN1 = in1.nextLine();
-		jugador1 = new Jugador(jugadorN1);
-		
+		String jugadorN3 = in1.nextLine();
 		System.out.print("Jugador 2: ");
-		jugadorN2 = in1.nextLine();
-		jugador2 = new Jugador(jugadorN2);
+		String jugadorN4 = in1.nextLine();
 		
-		Equipo equipo2 = new Equipo(segundoEquipo, jugador1, jugador2);
-		Partido partido1 = new Partido(equipo1, equipo2);
 		*/
 		
-		String jugador = "Nadal";
-		Jugador jugador1 = new Jugador(jugador);
+		String primerEquipo = "SPAIN";
+		String jugadorN1 = "Nadal";
+		String jugadorN2 = "Alcaraz";
 		
-		String jugador11 = "Alcazar";
-		Jugador jugador2 = new Jugador(jugador11);
+		String segundoEquipo = "USA";
+		String jugadorN3 = "John";
+		String jugadorN4 = "Williams";
 		
-		String jugador22 = "Djokovic";
-		Jugador jugador23 = new Jugador(jugador22);
-		
-		String jugador24 = "Williams";
-		Jugador jugador25 = new Jugador(jugador24);
-		
-		Equipo equipo1 = new Equipo("SPAIN", jugador1, jugador2);
-		Equipo equipo2 = new Equipo("USA", jugador23, jugador25);
-		Partido partido1 = new Partido(equipo1,equipo2);
+		Partido partido1 = new Partido();
+		partido1.agregarEquipo(primerEquipo, jugadorN1, jugadorN2);
+		partido1.agregarEquipo(segundoEquipo, jugadorN3, jugadorN4);
 		
 		while(!salir) {
 			System.out.println("");

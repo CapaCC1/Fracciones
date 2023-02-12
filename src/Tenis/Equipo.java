@@ -12,7 +12,9 @@ public class Equipo {
 		this.jugador1 = jugador1;
 		this.jugador2 = jugador2;
 		this.nombreEquipo = nombreEquipo;
-
+	}
+	
+	public Equipo() {
 	}
 	
 	public Equipo(String nombreEquipo) {
@@ -22,8 +24,14 @@ public class Equipo {
 	public String getNombreEquipo() {
 		return nombreEquipo;
 	}
-	
-	
+	 
+	 public Jugador agregarJugador(String nombreJugador) {
+		 
+		 Jugador jugador = new Jugador(nombreJugador);
+		 
+		 return jugador;
+	 }
+	 
 	public Jugador getJugador1() {
 		return jugador1;
 		
@@ -37,6 +45,7 @@ public class Equipo {
 	}
 	
 	public Jugador buscaJugador(String nombreJugador) {
+		
         if (jugador1.equals(new Jugador(nombreJugador))) {
             return jugador1;
         }
@@ -48,7 +57,7 @@ public class Equipo {
 	
 	public int aniadePuntoGanador(String nombre) {
 		Jugador jugador = buscaJugador(nombre);
-		if(jugador != null) {
+		if(jugador == buscaJugador(nombre)) {
 			jugador.aumentarPuntosGanados();
 			return 0;
 		}else {
@@ -58,7 +67,7 @@ public class Equipo {
 	
 	public int aniadeErroresNoForzados(String nombre) {
 		Jugador jugador = buscaJugador(nombre);
-		if(jugador != null) {
+		if(jugador == buscaJugador(nombre)) {
 			jugador.aumentaErroresNoForzados();
 			return 2;
 		}else {
@@ -69,7 +78,7 @@ public class Equipo {
 	
 	public int aniadeSaquesDirectos(String nombre) {
 		Jugador jugador = buscaJugador(nombre);
-		if(jugador != null) {
+		if(jugador == buscaJugador(nombre)) {
 			jugador.aumentarSaquesDirectos();
 			return 3;
 		}else {
@@ -77,10 +86,10 @@ public class Equipo {
 		}
 	}
 	
-	public String muestraEstadisticasJugador(String nombreJugador) {
-	    Jugador jugador = buscaJugador(nombreJugador);
+	public String muestraEstadisticasJugador(String nombre) {
+	    Jugador jugador = buscaJugador(nombre);
 	    String resultado = "";
-	    if (jugador != null) {
+	    if(jugador == buscaJugador(nombre)) {
 	      resultado += jugador.toString();
 	    }
 	    return resultado;
@@ -119,17 +128,18 @@ public class Equipo {
 	    return puntos;
 	  }
 	
-	public Equipo buscaEquipoJugador(String nombre, Equipo equipo) {
-		Jugador jugador = buscaJugador(nombre);
-	    if (jugador != null) {
-	      return equipo;
+	public Equipo buscarEquipoJugador(String nombreJugador, Equipo equipo1, Equipo equipo2) {
+	    Jugador jugador1 = equipo1.buscaJugador(nombreJugador);
+	    Jugador jugador2 = equipo2.buscaJugador(nombreJugador);
+
+	    if (jugador1 != null) {
+	        return equipo1;
+	    } else if (jugador2 != null) {
+	        return equipo2;
+	    } else {
+	        return null;
 	    }
-	    jugador = buscaJugador(nombre);
-	    if (jugador != null) {
-	      return equipo;
-	    }
-	    return null;
-	  }
+	}
 	
 	public String toString() {
 		String resultado = "";
